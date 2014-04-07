@@ -10,6 +10,10 @@
      
 	function onDeviceReady() {
      	startWatch();
+		var element = document.getElementById('deviceIsReady');
+		element.innerHTML = 'Watching shake movement...';
+
+		shake.startWatch(onDetected);
         
     }
 	
@@ -75,16 +79,6 @@ function onFail(message) {
     alert('Failed because: ' + message);
 }
 }
-document.addEventListener("deviceready",onDeviceReady,false);
-
-    // Cordova is ready to be used!
-    //
-    function onDeviceReady() {
-		var element = document.getElementById('deviceIsReady');
-		element.innerHTML = 'Watching shake movement...';
-
-		shake.startWatch(onDetected);
-    }
 
 	function onDetected() {
 		var element = document.getElementById('shakeData');
@@ -93,6 +87,11 @@ document.addEventListener("deviceready",onDeviceReady,false);
 
 	function clearShakeData(){
 		document.getElementById('shakeData').innerHTML = '';
+	}
+
+
+	
+	 '';
 	}
 
 
