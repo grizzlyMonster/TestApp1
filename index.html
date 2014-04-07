@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acceleration Demo</title>
+    <meta name="viewport" content="width=device-width">
+    <script src="phonegap.js"></script>
+    <script src='apis/jquery.js'></script>
+    <script src='apis/main.js'></script>
+    <style>
+		body {background-color: #003; color:#C90}
+		div#container {width:300px;text-align:center;margin:auto}
+		canvas {border:1px dotted yellow; margin-top: 50px; }
+		p#results {text-align:left}
+		table {  margin:  10px auto 25px auto}
+		table td {border: 1px solid #AAA; padding: 4px}
+		div#canvas {width: 200px; height: 200px; margin: auto; 
+					border: 1px solid	white; }
+		div#footBall { background-color: orange;
+						position: relative;
+						width: 80px;
+						height: 80px;
+						left: 90px;
+						top: 90px;
+						 
+       }
+            	  
+	</style>
+  </head>
+  <div id='container'>
+   <h1>Accelerometer Demo</h1>
+   
+    <div>
+    <button onclick="stopWatch();">Stop</button>
+    <button onclick="startWatch();">Start</button>
+	<button onclick="ClickImage()">Click</button>
+   </div>
+    <div id="accelerometer">
+        <table>
+        <tr><td>Acceleration X:</td><td id='x'></td></tr>
+        <tr><td>Acceleration Y:</td><td id='y'></td></tr>
+        <tr><td>Acceleration Z:</td><td id='z'></td></tr>
+        <tr><td>Reading Count:</td><td id='t'></td></tr>
+        </table>
+    </div>
+     
+    
+    <div id='canvas'>
+    	<div id='footBall'><img id="myImage" width="80px" height="80px"></img></div>
+    </div>
+    
+   </div>
+   <div id="image">
+   <img id="myImage"></img>
+   </div>
+   <div id="deviceIsReady">Loading...</div>
+    <p id="shakeData">
+	</p>
+  </body>
+</html>
