@@ -82,16 +82,11 @@ function onFail(message) {
 
 	function onDetected() {
 		var element = document.getElementById('shakeData');
-		element.innerHTML = 'It\'s happening! <p><button type="button" onclick="clearShakeData();">Clear</button></p>'
+		element.innerHTML = 'Happening,Bitch!!!';
 	}
 
 	function clearShakeData(){
 		document.getElementById('shakeData').innerHTML = '';
-	}
-
-
-	
-	 '';
 	}
 
 
