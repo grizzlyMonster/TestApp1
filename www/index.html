@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Acceleration Demo</title>
+    <title>Similar Search</title>
     <meta name="viewport" content="width=device-width">
     <script src="phonegap.js"></script>
     <script src='apis/jquery.js'></script>
     <script src='apis/main.js'></script>
 	<script src='apis/shake.js'></script>
+	<script>
+	function shaken(){
+		var number = 1 + Math.floor(Math.random() * 12);
+                document.getElementById("myImage").attr('src','img/' + number.toString() + '.jpg')
+            }
+             
+            // Error
+            function onError() {
+                document.getElementById('message').innerHTML("Error");
+            }
+	</script>
     <style>
 		body {background-color: #003; color:#C90}
 		div#container {width:300px;text-align:center;margin:auto}
@@ -16,12 +27,12 @@
 		table td {border: 1px solid #AAA; padding: 4px}
 		div#canvas {width: 500px; height: 500px; margin: auto; 
 					border: 1px solid	white; }
-		div#footBall { background-color: orange;
-						position: relative;
-						width: 20px;
-						height: 200px;
-						left: 100px;
-						top: 100px;
+		div#footBall {position: relative;
+		                width:490px;
+						height:490px;
+						left: 10px;
+						top: 10px;
+						
 						 
        }
             	  
@@ -46,12 +57,9 @@
      
     
     <div id='canvas'>
-    	<div id='footBall'><img id="myImage" width="80px" height="80px"></img></div>
+    <div id='footBall'><img width="486" height="489" id="myImage"></img></div>
     </div>
-    
-   </div>
-   <div id="image">
-   <img id="myImage"></img>
+    <p id="message"></p>
    </div>
   </body>
 </html>

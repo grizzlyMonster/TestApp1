@@ -1,4 +1,5 @@
 // The watch id references the current `watchAcceleration`
+
             var watchID = null;
              
             //wait for PhoneGap to load
@@ -41,11 +42,4 @@
                   }, onError, { frequency: 2000 });
             }
              
-            function shaken(){
-                document.write("<h1>Shaken</h1>");
-            }
-             
-            // Error
-            function onError() {
-                document.write("<h1>Error</h1>")
-            }
+            

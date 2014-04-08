@@ -1,7 +1,9 @@
+
 	watchID = null;
 	countMe = 0;
 	
-	$(document).ready(function(){  onDeviceReady();
+	$(document).ready(function(){  
+	onDeviceReady();
 
 
 
@@ -10,10 +12,6 @@
      
 	function onDeviceReady() {
      	startWatch();
-		var element = document.getElementById('deviceIsReady');
-		element.innerHTML = 'Watching shake movement...';
-
-		shake.startWatch(onDetected);
         
     }
 	var previousReading = {
@@ -74,10 +72,11 @@ function ClickImage(){
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
     destinationType: Camera.DestinationType.DATA_URL
 });
-
+var source;
 function onSuccess(imageData) {
     var image = document.getElementById('myImage');
     image.src = "data:image/jpeg;base64," + imageData;
+	source = "data:image/jpeg;base64," + imageData;
 }
 
 function onFail(message) {
@@ -85,14 +84,6 @@ function onFail(message) {
 }
 }
 
-	function onDetected() {
-		var element = document.getElementById('shakeData');
-		element.innerHTML = 'Happening,Bitch!!!';
-	}
-
-	function clearShakeData(){
-		document.getElementById('shakeData').innerHTML = '';
-	}
 
 
 	
