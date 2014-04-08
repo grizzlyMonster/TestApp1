@@ -1,65 +1,51 @@
-//origin -> https://gist.github.com/leecrossley/4078996
-//Open source github plugin to detect shakes on phonegap 
-var shake = (function () {
-	var shake = {},
-		watchId = null,
-		options = { frequency: 300 },
-		previousAcceleration = { x: null, y: null, z: null },
-		shakeCallBack = null;
-
-	// Start watching the accelerometer for a shake gesture
-	shake.startWatch = function (onShake) {
-		if (onShake) {
-			shakeCallBack = onShake;
-		}
-		watchId = navigator.accelerometer.watchAcceleration(getAccelerationSnapshot, handleError, options);
-	};
-
-	// Stop watching the accelerometer for a shake gesture
-	shake.stopWatch = function () {
-		if (watchId !== null) {
-			navigator.accelerometer.clearWatch(watchId);
-			watchId = null;
-		}
-	};
-
-	// Gets the current acceleration snapshot from the last accelerometer watch
-	function getAccelerationSnapshot() {
-		navigator.accelerometer.getCurrentAcceleration(assessCurrentAcceleration, handleError);
-	}
-
-	// Assess the current acceleration parameters to determine a shake
-	function assessCurrentAcceleration(acceleration) {
-		var accelerationChange = {};
-		if (previousAcceleration.x !== null) {
-			accelerationChange.x = Math.abs(previousAcceleration.x, acceleration.x);
-			accelerationChange.y = Math.abs(previousAcceleration.y, acceleration.y);
-			accelerationChange.z = Math.abs(previousAcceleration.z, acceleration.z);
-		}
-		if (accelerationChange.x + accelerationChange.y + accelerationChange.z > 30) {
-			// Shake detected
-			if (typeof (shakeCallBack) === "function") {
-				shakeCallBack();
-			}
-			shake.stopWatch();
-			setTimeout(shake.startWatch, 1000, shakeCallBack);
-			previousAcceleration = { 
-				x: null, 
-				y: null, 
-				z: null
-			}
-		} else {
-			previousAcceleration = {
-				x: acceleration.x,
-				y: acceleration.y,
-				z: acceleration.z
-			}
-		}
-	}
-
-	// Handle errors here
-	function handleError() {
-	}
-
-	return shake;
-})();
+// The watch id references the current `watchAcceleration`
+            var watchID = null;
+             
+            //wait for PhoneGap to load
+            document.addEventListener("deviceready", loaded, false);
+             
+            // PhoneGap is ready
+            function loaded() {
+                startWatch();
+            }
+             
+            // Start watching the acceleration
+             
+            function startWatch() {
+                 
+                var previousReading = {
+                    x: null,
+                    y: null,
+                    z: null
+                }
+                 
+                navigator.accelerometer.watchAcceleration(function (acceleration) {
+                  var changes = {},
+                  bound = 0.2;
+                  if (previousReading.x !== null) {
+                      changes.x = Math.abs(previousReading.x, acceleration.x);
+                      changes.y = Math.abs(previousReading.y, acceleration.y);
+                      changes.z = Math.abs(previousReading.z, acceleration.z);
+                  }
+                   
+                  if (changes.x > bound && changes.y > bound && changes.z > bound) {
+                    shaken();
+                  }
+                   
+                  previousReading = {
+                  x: acceleration.x,
+                  y: acceleration.y,
+                  z: acceleration.z
+                  }
+                   
+                  }, onError, { frequency: 2000 });
+            }
+             
+            function shaken(){
+                document.write("<h1>Shaken</h1>");
+            }
+             
+            // Error
+            function onError() {
+                document.write("<h1>Error</h1>")
+            }
