@@ -7,12 +7,12 @@
              
             // PhoneGap is ready
             function loaded() {
-                startWatch();
+                startW();
             }
              
             // Start watching the acceleration
              
-            function startWatch() {
+            function startW() {
                  
                 var previousReading = {
                     x: null,
