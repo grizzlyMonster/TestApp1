@@ -22,7 +22,7 @@
                  
                 navigator.accelerometer.watchAcceleration(function (acceleration) {
                   var changes = {},
-                  bound = 1.3;
+                  bound = 1;
                   if (previousReading.x !== null) {
                       changes.x = Math.abs(previousReading.x, acceleration.x);
                       changes.y = Math.abs(previousReading.y, acceleration.y);
