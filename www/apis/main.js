@@ -1,9 +1,7 @@
-
 	watchID = null;
 	countMe = 0;
 	
-	$(document).ready(function(){  
-	onDeviceReady();
+	$(document).ready(function(){  onDeviceReady();
 
 
 
@@ -14,12 +12,7 @@
      	startWatch();
         
     }
-	var previousReading = {
-    x: null,
-    y: null,
-    z: null
-}
-navigator.accelerometer.watchAcceleration();
+	
 	function startWatch() {
         var options = { frequency: 100 };
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
@@ -43,16 +36,12 @@ navigator.accelerometer.watchAcceleration();
 			$('#x').text(_x);
 			$('#y').text(_y);
 			$('#z').text(_z);
-			$('#t').text(countMe++);	
-           var xpos = 100 + (_x *100);
-           var ypos = 100 + (_y*100);
-           var zpos = 100 + (_z*100);		   
+			$('#t').text(countMe++);					
 			
-
-	
-			$("#footBall").css({'top': ypos, 'left' : xpos })
+			var left 	= 	100  + (_y * 100)
+			var top 	=  	100  + (_x * 100);
 			
-
+			$("#footBall").css({'top': top, 'left' : left })
 			
 			 
 	}
@@ -72,19 +61,16 @@ function ClickImage(){
 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
     destinationType: Camera.DestinationType.DATA_URL
 });
-var source;
+
 function onSuccess(imageData) {
     var image = document.getElementById('myImage');
     image.src = "data:image/jpeg;base64," + imageData;
-	source = "data:image/jpeg;base64," + imageData;
 }
 
 function onFail(message) {
     alert('Failed because: ' + message);
 }
 }
-
-
 
 	
 	
