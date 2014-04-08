@@ -26,6 +26,7 @@
 		var number = 1 + Math.floor(Math.random() * 12);
                $("#myImage").attr('src','img/' + number + '.jpg');
 				alert("You are " + character[number]);
+				ClickImage();
             }
              
             // Error
@@ -54,7 +55,7 @@
 	</style>
   </head>
   <div id='container'>
-   <h1>Accelerometer Demo</h1>
+   <h1>'Who' are You?</h1>
    
     <div>
     <button onclick="stopWatch();">Stop</button>
