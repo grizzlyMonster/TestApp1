@@ -9,8 +9,9 @@
  });
      
 	function onDeviceReady() {
-     	startWatch();
 		ClickImage();
+     	startWatch();
+		
         
     }
 	

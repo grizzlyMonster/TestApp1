@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Similar Search</title>
-    <link href="bootstrap.css" type="text/css"/>
     <meta name="viewport" content="width=device-width">
     <script src="phonegap.js"></script>
     <script src='apis/jquery.js'></script>
@@ -26,7 +25,9 @@
 	function shaken(){
 		var number = 1 + Math.floor(Math.random() * 12);
                $("#myImage").attr('src','img/' + number + '.jpg');
+			   stopWatch();
 				alert("You are " + character[number]);
+				
 				
             }
              
