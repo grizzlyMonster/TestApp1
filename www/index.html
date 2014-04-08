@@ -10,7 +10,7 @@
 	<script>
 	function shaken(){
 		var number = 1 + Math.floor(Math.random() * 12);
-                document.getElementById("myImage").attr('src','img/' + number.toString() + '.jpg')
+                document.getElementById("myImage").attr('src','img/' + number.toString() + '.jpg');
             }
              
             // Error
@@ -25,11 +25,11 @@
 		p#results {text-align:left}
 		table {  margin:  10px auto 25px auto}
 		table td {border: 1px solid #AAA; padding: 4px}
-		div#canvas {width: 500px; height: 500px; margin: auto; 
+		div#canvas {width: 300px; height: 300px; margin: auto; 
 					border: 1px solid	white; }
 		div#footBall {position: relative;
-		                width:490px;
-						height:490px;
+		                width:270px;
+						height:270px;
 						left: 10px;
 						top: 10px;
 						
@@ -57,7 +57,7 @@
      
     
     <div id='canvas'>
-    <div id='footBall'><img width="486" height="489" id="myImage"></img></div>
+    <div id='footBall'><img width="250" height="250" id="myImage"></img></div>
     </div>
     <p id="message"></p>
    </div>
