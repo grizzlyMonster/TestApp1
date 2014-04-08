@@ -3,9 +3,8 @@
             var watchID = null;
              
             //wait for PhoneGap to load
-           $(document).ready(function(){ 
-		   loaded();
-             });
+            document.addEventListener("deviceready", loaded, false);
+             
             // PhoneGap is ready
             function loaded() {
                 startW();
