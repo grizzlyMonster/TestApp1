@@ -2,14 +2,14 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "ca.mohawkcollege.accelerometerDemo2013"  version = "0.0.5">
-    <name>Accelerometer Demo 2013</name>
+    <name>'Who' are You?</name>
 
     <description>
        A sample PhoneGap 2013 application  
     </description>
 
-    <author href="http://www.mohawkcollege.ca" email="YourNameHere@mohawkcollege.ca">
-        CO10133  Demo Accelerometer App 2013
+    <author href="http://www.mohawkcollege.ca" email="harpreet.marok@mohawkcollege.ca">
+        Harpreet Marok
     </author>
 
     <gap:platform name="android" /> 
