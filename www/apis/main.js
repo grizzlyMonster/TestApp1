@@ -39,11 +39,6 @@
 			$('#z').text(_z);
 			$('#t').text(countMe++);					
 			
-			var left 	= 	100  + (_y * 100)
-			var top 	=  	100  + (_x * 100);
-			
-			$("#footBall").css({'top': top, 'left' : left })
-			
 			 
 	}
 	//rounds number to number of decimal places 
