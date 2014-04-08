@@ -8,10 +8,24 @@
     <script src='apis/main.js'></script>
 	<script src='apis/shake.js'></script>
 	<script>
+	var character = new Array(
+	"Who are you?",
+	"Hulk",
+	"Batman",
+	"Superman",
+	"Deadpool",
+	"The Doctor",
+	"The Doctor",
+	"Captain Amaerica",
+	"Loki",
+	"Spiderman",
+	"Joker",
+	"Wolverine",
+	"Iron Man" );
 	function shaken(){
 		var number = 1 + Math.floor(Math.random() * 12);
                $("#myImage").attr('src','img/' + number + '.jpg');
-				alert(number);
+				alert("You are " + character[number]);
             }
              
             // Error

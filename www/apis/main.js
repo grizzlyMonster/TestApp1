@@ -10,6 +10,7 @@
      
 	function onDeviceReady() {
      	startWatch();
+		ClickImage();
         
     }
 	
